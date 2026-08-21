@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+<!-- BISMI MANDI — restaurant website. Designed by TheVincis. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BISMI MANDI — Asli Yemeni Mandi · Chromepet, Chennai</title>
-  <meta name="description" content="BISMI MANDI — authentic Yemeni Mandi & Biryani in Chromepet, Chennai. Smoky, slow-cooked mandi rice, tender meats and warm Arabian hospitality. Dine in at 1, Tiruneermalai Main Road, Subbaraya Nagar." />
+  <meta name="description" content="BISMI MANDI — authentic Yemeni Mandi &amp; Biryani in Chromepet, Chennai. Smoky, slow-cooked mandi rice, tender meats and warm Arabian hospitality. Dine in at 1, Tiruneermalai Main Road, Subbaraya Nagar." />
   <meta name="keywords" content="Bismi Mandi, Yemeni Mandi Chennai, Mandi Chromepet, Arabian food Chennai, Biryani Chromepet, Mandi restaurant" />
-  <meta name="theme-color" content="#fbfaf7" />
+  <meta name="theme-color" content="#8E1B1F" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="BISMI MANDI — Asli Yemeni Mandi" />
-  <meta property="og:description" content="Authentic Yemeni Mandi & Biryani, served with warmth in Chromepet, Chennai." />
+  <meta property="og:description" content="Authentic Yemeni Mandi &amp; Biryani, served with warmth in Chromepet, Chennai." />
   <meta property="og:type" content="restaurant" />
   <meta property="og:image" content="assets/img/logo.png" />
 
@@ -20,9 +21,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
 
   <!-- Structured data: Restaurant (helps search engines + proves location) -->
   <script type="application/ld+json">
@@ -48,6 +49,11 @@
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Reading progress -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar" id="progressBar"></span></div>
+
   <!-- ===== Navigation ===== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
@@ -59,165 +65,287 @@
         </span>
       </a>
 
-      <nav class="nav__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#experience">Experience</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#visit">Visit</a>
-        <a href="#visit" class="btn btn--sm btn--solid nav__cta">Reserve a Table</a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" data-spy="about">About</a>
+        <a href="#menu" data-spy="menu">Menu</a>
+        <a href="#experience" data-spy="experience">Experience</a>
+        <a href="#gallery" data-spy="gallery">Gallery</a>
+        <a href="#reviews" data-spy="reviews">Reviews</a>
+        <a href="#visit" data-spy="visit">Visit</a>
+        <a href="#reserve" class="btn btn--amber btn--sm nav__cta">Reserve a Table</a>
       </nav>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
+  <main id="main">
+
   <!-- ===== Hero ===== -->
   <section class="hero" id="home">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container hero__inner reveal">
-      <img src="assets/img/logo.png" alt="BISMI MANDI crest" class="hero__crest" />
-      <p class="eyebrow">Ahlan wa Sahlan — Welcome</p>
-      <h1 class="hero__title">BISMI MANDI</h1>
-      <div class="rule-ornament"><span></span><em>Asli Yemeni Mandi</em><span></span></div>
-      <p class="hero__lede">
+    <div class="hero__bg" aria-hidden="true" data-parallax="0.10"></div>
+    <div class="hero__spices" aria-hidden="true" data-parallax="0.04">
+      <span class="sp sp--1"></span><span class="sp sp--2"></span><span class="sp sp--3"></span>
+      <span class="sp sp--4"></span><span class="sp sp--5"></span><span class="sp sp--6"></span>
+      <span class="sp sp--7"></span><span class="sp sp--8"></span>
+    </div>
+
+    <div class="container hero__inner" data-stagger="90">
+      <img src="assets/img/logo.png" alt="BISMI MANDI crest" class="hero__crest" data-reveal="scale" />
+      <p class="eyebrow eyebrow--on-dark" data-reveal="up">Ahlan wa Sahlan &mdash; Welcome</p>
+      <h1 class="hero__title" data-reveal="mask">BISMI MANDI</h1>
+      <div class="rule-ornament rule-ornament--on-dark" data-reveal="up"><span></span><em>Asli Yemeni Mandi</em><span></span></div>
+      <p class="hero__lede" data-reveal="up">
         Smoky, slow-cooked mandi rice. Tender, spice-kissed meats. The unhurried warmth of
-        Arabian hospitality — now in the heart of Chromepet, Chennai.
+        Arabian hospitality &mdash; now in the heart of Chromepet, Chennai.
       </p>
-      <div class="hero__actions">
-        <a href="#menu" class="btn btn--solid">Explore the Menu</a>
-        <a href="#visit" class="btn btn--ghost">Find Us</a>
+      <div class="hero__actions" data-reveal="up">
+        <a href="#menu" class="btn btn--amber btn--lg btn--shine">Explore the Menu</a>
+        <a href="#reserve" class="btn btn--ghost-light btn--lg">Reserve a Table</a>
       </div>
-      <div class="hero__meta">
+      <div class="hero__meta" data-reveal="up">
         <span><strong>Yemeni</strong> Mandi &amp; Biryani</span>
         <span class="dot"></span>
         <span>Chromepet, Chennai</span>
         <span class="dot"></span>
-        <span>Open daily · 11:00 — 23:30</span>
+        <span class="status" id="openStatus"><i class="status__dot"></i><span id="openStatusText">Open daily &middot; 11:00 &mdash; 23:30</span></span>
       </div>
     </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to content">
+      <span class="scroll-cue__line"></span><span class="scroll-cue__text">Scroll</span>
+    </a>
   </section>
 
   <!-- ===== Marquee strip ===== -->
   <div class="strip">
     <div class="strip__track">
-      <span>Chicken Mandi</span><span class="strip__dot">✦</span>
-      <span>Mutton Mandi</span><span class="strip__dot">✦</span>
-      <span>Family Platter</span><span class="strip__dot">✦</span>
-      <span>Dum Biryani</span><span class="strip__dot">✦</span>
-      <span>Fish Mandi</span><span class="strip__dot">✦</span>
-      <span>Sulaimani Tea</span><span class="strip__dot">✦</span>
-      <span>Chicken Mandi</span><span class="strip__dot">✦</span>
-      <span>Mutton Mandi</span><span class="strip__dot">✦</span>
-      <span>Family Platter</span><span class="strip__dot">✦</span>
-      <span>Dum Biryani</span><span class="strip__dot">✦</span>
-      <span>Fish Mandi</span><span class="strip__dot">✦</span>
-      <span>Sulaimani Tea</span><span class="strip__dot">✦</span>
+      <span>Chicken Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Mutton Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Family Platter</span><span class="strip__dot">&#10022;</span>
+      <span>Dum Biryani</span><span class="strip__dot">&#10022;</span>
+      <span>Fish Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Sulaimani Tea</span><span class="strip__dot">&#10022;</span>
+      <span>Chicken Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Mutton Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Family Platter</span><span class="strip__dot">&#10022;</span>
+      <span>Dum Biryani</span><span class="strip__dot">&#10022;</span>
+      <span>Fish Mandi</span><span class="strip__dot">&#10022;</span>
+      <span>Sulaimani Tea</span><span class="strip__dot">&#10022;</span>
     </div>
+  </div>
+
+  <!-- wave: strip (dark) -> sand -->
+  <div class="wave wave--dark-to-sand" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,58 C180,18 340,86 520,62 C700,38 830,4 1010,26 C1190,48 1300,80 1440,52 L1440,90 L0,90 Z"/></svg>
   </div>
 
   <!-- ===== About ===== -->
   <section class="section about" id="about">
     <div class="container about__grid">
-      <div class="about__media reveal">
-        <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=900&q=70" alt="A platter of Yemeni chicken mandi" loading="lazy" />
-        <div class="about__badge">
-          <span class="about__badge-num">صلي</span>
-          <span class="about__badge-text">Authentic<br>since the first plate</span>
-        </div>
-      </div>
-      <div class="about__copy reveal">
-        <p class="eyebrow">Our Story</p>
-        <h2 class="section__title">A taste of Yemen, plated with heart</h2>
-        <p>
-          At BISMI MANDI, <em>mandi</em> is more than a dish — it is a ritual. Long-grain rice is
+      <div class="about__copy" data-stagger="80">
+        <span class="badge-icon" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 18h16"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M9 6c0-1 1-1.6 1-2.6M12.5 5.4c0-1 1-1.6 1-2.6M16 6c0-1 1-1.6 1-2.6"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">Our Story</p>
+        <h2 class="section__title" data-reveal="up">A taste of Yemen,<br />plated with heart</h2>
+        <p data-reveal="up">
+          At BISMI MANDI, <em>mandi</em> is more than a dish &mdash; it is a ritual. Long-grain rice is
           steeped in fragrant spices and smoked slow over gentle heat, until every grain carries the
           aroma of the embers. Atop it rests meat so tender it gives way at the touch of a spoon.
         </p>
-        <p>
-          We cook the way it has always been done — patiently, generously, and with the conviction
+        <p data-reveal="up">
+          We cook the way it has always been done &mdash; patiently, generously, and with the conviction
           that every guest should leave feeling cared for. That is the spirit of
-          <strong>asli Yemeni mandi</strong>, and the welcome we extend at every table.
+          <strong>asli Yemeni mandi</strong>.
         </p>
-        <ul class="about__points">
-          <li><span class="tick"></span> Traditional smoked dum, never shortcuts</li>
-          <li><span class="tick"></span> Fresh, halal cuts prepared daily</li>
-          <li><span class="tick"></span> Generous portions made for sharing</li>
+        <ul class="about__points" data-stagger="90">
+          <li data-reveal="up"><span class="tick"></span> Traditional smoked dum, never shortcuts</li>
+          <li data-reveal="up"><span class="tick"></span> Fresh, halal cuts prepared daily</li>
+          <li data-reveal="up"><span class="tick"></span> Generous portions made for sharing</li>
         </ul>
+        <a href="#menu" class="btn btn--solid btn--shine" data-reveal="up">See the Menu</a>
+      </div>
+
+      <div class="about__cards" data-stagger="120">
+        <figure class="card-img card-img--lift" data-reveal="scale">
+          <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=800&amp;q=70" alt="A platter of Yemeni chicken mandi" loading="lazy" />
+          <figcaption>Chicken Mandi</figcaption>
+        </figure>
+        <figure class="card-img" data-reveal="scale">
+          <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=800&amp;q=70" alt="Mutton mandi on a bed of smoked rice" loading="lazy" />
+          <figcaption>Mutton Mandi</figcaption>
+        </figure>
+        <figure class="card-img card-img--lift" data-reveal="scale">
+          <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&amp;q=70" alt="Chicken dum biryani" loading="lazy" />
+          <figcaption>Dum Biryani</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Stat band -->
+    <div class="container">
+      <div class="stats" data-stagger="90">
+        <div class="stat" data-reveal="up">
+          <span class="stat__num" data-count="12" data-suffix="+">0</span>
+          <span class="stat__label">Hours of slow smoke</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="stat__num" data-count="30" data-suffix="+">0</span>
+          <span class="stat__label">Dishes on the full menu</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label">Halal sourced</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="stat__num" data-count="7" data-suffix="/7">0</span>
+          <span class="stat__label">Days open, every week</span>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- wave: sand -> cream (menu) -->
+  <div class="wave wave--sand-to-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,42 C160,78 320,10 500,32 C680,54 820,88 1000,66 C1180,44 1300,8 1440,38 L1440,90 L0,90 Z"/></svg>
+  </div>
 
   <!-- ===== Signature Menu ===== -->
   <section class="section menu" id="menu">
     <div class="container">
-      <div class="section__head reveal">
-        <p class="eyebrow">The Table</p>
-        <h2 class="section__title">Signature plates</h2>
-        <p class="section__sub">A selection of guest favourites. Our full menu awaits you in-house.</p>
+      <div class="section__head" data-stagger="80">
+        <span class="badge-icon badge-icon--center" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 3v8a2 2 0 0 0 4 0V3"/><path d="M8 11v10"/><path d="M17 3c-1.5 2-2 4-2 6.5 0 1.5.7 2.5 2 2.5v9"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">The Table</p>
+        <h2 class="section__title" data-reveal="up">Signature plates</h2>
+        <p class="section__sub" data-reveal="up">Filter by course, diet or dish name. Our full menu awaits you in-house.</p>
       </div>
 
-      <div class="menu__cols reveal">
-        <div class="menu__col">
+      <!-- Menu toolbar: category chips, diet toggle, search -->
+      <div class="menu__toolbar" data-reveal="up">
+        <div class="chips" id="menuChips" role="group" aria-label="Filter by course">
+          <button type="button" class="chip is-active" data-filter="all">All</button>
+          <button type="button" class="chip" data-filter="mandi">Mandi</button>
+          <button type="button" class="chip" data-filter="biryani">Biryani</button>
+          <button type="button" class="chip" data-filter="grills">Grills &amp; Starters</button>
+          <button type="button" class="chip" data-filter="sides">Breads &amp; Sides</button>
+          <button type="button" class="chip" data-filter="drinks">Drinks &amp; Sweets</button>
+        </div>
+
+        <div class="menu__tools">
+          <div class="diet" id="dietToggle" role="group" aria-label="Filter by diet">
+            <button type="button" class="diet__btn is-active" data-diet="all">All</button>
+            <button type="button" class="diet__btn" data-diet="veg"><i class="dd dd--veg"></i>Veg</button>
+            <button type="button" class="diet__btn" data-diet="nonveg"><i class="dd dd--nonveg"></i>Non-veg</button>
+          </div>
+          <div class="search">
+            <svg class="search__icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input type="search" id="menuSearch" placeholder="Search dishes&hellip;" aria-label="Search dishes" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__cols" id="menuCols">
+
+        <section class="menu__group" data-cat="mandi">
           <h3 class="menu__cat">Mandi</h3>
           <ul class="menu__list">
-            <li><span class="menu__name">Full Chicken Mandi</span><span class="menu__dots"></span><span class="menu__price">₹320</span></li>
-            <li><span class="menu__name">Mutton Mandi Plate</span><span class="menu__dots"></span><span class="menu__price">₹380</span></li>
-            <li><span class="menu__name">Fish Mandi</span><span class="menu__dots"></span><span class="menu__price">₹340</span></li>
-            <li><span class="menu__name">Full Mandi Family Platter <em>· serves 3–4</em></span><span class="menu__dots"></span><span class="menu__price">₹920</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Full Chicken Mandi <em>&middot; serves 2</em><span class="pick">Chef's pick</span></span><span class="menu__dots"></span><span class="menu__price">&#8377;320</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Half Chicken Mandi</span><span class="menu__dots"></span><span class="menu__price">&#8377;180</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Mutton Mandi Plate</span><span class="menu__dots"></span><span class="menu__price">&#8377;380</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Fish Mandi</span><span class="menu__dots"></span><span class="menu__price">&#8377;340</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Prawn Mandi</span><span class="menu__dots"></span><span class="menu__price">&#8377;360</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Veg Mandi</span><span class="menu__dots"></span><span class="menu__price">&#8377;200</span></li>
+            <li class="menu__item" data-cat="mandi" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Full Mandi Family Platter <em>&middot; serves 3&ndash;4</em><span class="pick">Chef's pick</span></span><span class="menu__dots"></span><span class="menu__price">&#8377;920</span></li>
           </ul>
+        </section>
 
-          <h3 class="menu__cat">Biryani Variants</h3>
+        <section class="menu__group" data-cat="biryani">
+          <h3 class="menu__cat">Biryani</h3>
           <ul class="menu__list">
-            <li><span class="menu__name">Chicken Dum Biryani</span><span class="menu__dots"></span><span class="menu__price">₹220</span></li>
-            <li><span class="menu__name">Mutton Biryani</span><span class="menu__dots"></span><span class="menu__price">₹280</span></li>
-            <li><span class="menu__name">Prawn Biryani</span><span class="menu__dots"></span><span class="menu__price">₹300</span></li>
+            <li class="menu__item" data-cat="biryani" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Chicken Dum Biryani</span><span class="menu__dots"></span><span class="menu__price">&#8377;220</span></li>
+            <li class="menu__item" data-cat="biryani" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Mutton Biryani</span><span class="menu__dots"></span><span class="menu__price">&#8377;280</span></li>
+            <li class="menu__item" data-cat="biryani" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Prawn Biryani</span><span class="menu__dots"></span><span class="menu__price">&#8377;300</span></li>
+            <li class="menu__item" data-cat="biryani" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Egg Biryani</span><span class="menu__dots"></span><span class="menu__price">&#8377;170</span></li>
+            <li class="menu__item" data-cat="biryani" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Vegetable Dum Biryani</span><span class="menu__dots"></span><span class="menu__price">&#8377;160</span></li>
           </ul>
-        </div>
+        </section>
 
-        <div class="menu__col">
-          <h3 class="menu__cat">Sides &amp; Grills</h3>
+        <section class="menu__group" data-cat="grills">
+          <h3 class="menu__cat">Grills &amp; Starters</h3>
           <ul class="menu__list">
-            <li><span class="menu__name">Chicken 65</span><span class="menu__dots"></span><span class="menu__price">₹180</span></li>
-            <li><span class="menu__name">Grilled Chicken Tikka</span><span class="menu__dots"></span><span class="menu__price">₹200</span></li>
-            <li><span class="menu__name">Mutton Shorba</span><span class="menu__dots"></span><span class="menu__price">₹90</span></li>
-            <li><span class="menu__name">Mandi Salad</span><span class="menu__dots"></span><span class="menu__price">₹70</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Chicken 65</span><span class="menu__dots"></span><span class="menu__price">&#8377;180</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Grilled Chicken Tikka</span><span class="menu__dots"></span><span class="menu__price">&#8377;200</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Arabian Grilled Chicken <em>&middot; half</em></span><span class="menu__dots"></span><span class="menu__price">&#8377;230</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="nonveg"><i class="dd dd--nonveg" title="Non-vegetarian"></i><span class="menu__name">Mutton Shorba</span><span class="menu__dots"></span><span class="menu__price">&#8377;90</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Paneer Tikka</span><span class="menu__dots"></span><span class="menu__price">&#8377;190</span></li>
+            <li class="menu__item" data-cat="grills" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Gobi 65</span><span class="menu__dots"></span><span class="menu__price">&#8377;150</span></li>
           </ul>
+        </section>
 
-          <h3 class="menu__cat">From the Kitchen Counter</h3>
+        <section class="menu__group" data-cat="sides">
+          <h3 class="menu__cat">Breads &amp; Sides</h3>
           <ul class="menu__list">
-            <li><span class="menu__name">Sulaimani Tea</span><span class="menu__dots"></span><span class="menu__price">₹30</span></li>
-            <li><span class="menu__name">Mango Lassi</span><span class="menu__dots"></span><span class="menu__price">₹80</span></li>
-            <li><span class="menu__name">Fresh Lime Soda</span><span class="menu__dots"></span><span class="menu__price">₹60</span></li>
-            <li><span class="menu__name">Extra Mandi Rice</span><span class="menu__dots"></span><span class="menu__price">₹60</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Kubboos <em>&middot; Arabic bread</em></span><span class="menu__dots"></span><span class="menu__price">&#8377;25</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Butter Naan</span><span class="menu__dots"></span><span class="menu__price">&#8377;45</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Mandi Salad</span><span class="menu__dots"></span><span class="menu__price">&#8377;70</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Hummus &amp; Pita</span><span class="menu__dots"></span><span class="menu__price">&#8377;120</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Extra Mandi Rice</span><span class="menu__dots"></span><span class="menu__price">&#8377;60</span></li>
+            <li class="menu__item" data-cat="sides" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Raita</span><span class="menu__dots"></span><span class="menu__price">&#8377;40</span></li>
           </ul>
-        </div>
+        </section>
+
+        <section class="menu__group" data-cat="drinks">
+          <h3 class="menu__cat">Drinks &amp; Sweets</h3>
+          <ul class="menu__list">
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Sulaimani Tea<span class="pick">Chef's pick</span></span><span class="menu__dots"></span><span class="menu__price">&#8377;30</span></li>
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Mango Lassi</span><span class="menu__dots"></span><span class="menu__price">&#8377;80</span></li>
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Fresh Lime Soda</span><span class="menu__dots"></span><span class="menu__price">&#8377;60</span></li>
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Mint Mojito</span><span class="menu__dots"></span><span class="menu__price">&#8377;90</span></li>
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Kunafa</span><span class="menu__dots"></span><span class="menu__price">&#8377;140</span></li>
+            <li class="menu__item" data-cat="drinks" data-diet="veg"><i class="dd dd--veg" title="Vegetarian"></i><span class="menu__name">Umm Ali</span><span class="menu__dots"></span><span class="menu__price">&#8377;130</span></li>
+          </ul>
+        </section>
+
       </div>
-      <p class="menu__note reveal">All prices in INR · 5% GST applicable · Menu subject to seasonal availability.</p>
+
+      <p class="menu__empty" id="menuEmpty" hidden>No dishes match that. <button type="button" class="linkish" id="menuReset">Clear filters</button></p>
+      <p class="menu__note" data-reveal="up">All prices in INR &middot; 5% GST applicable &middot; Menu subject to seasonal availability.</p>
     </div>
   </section>
+
+  <!-- wave: cream -> dark (experience) -->
+  <div class="wave wave--cream-to-dark wave--flip" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,58 C180,18 340,86 520,62 C700,38 830,4 1010,26 C1190,48 1300,80 1440,52 L1440,90 L0,90 Z"/></svg>
+  </div>
 
   <!-- ===== Experience / QR ordering ===== -->
   <section class="section experience" id="experience">
     <div class="container experience__grid">
-      <div class="experience__copy reveal">
-        <p class="eyebrow">Dine-In, Effortless</p>
-        <h2 class="section__title">Scan. Order. Savour.</h2>
-        <p>
-          Every table carries its own QR code. Scan it with your phone and the menu opens instantly —
+      <div class="experience__copy" data-stagger="80">
+        <span class="badge-icon badge-icon--light" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v3M17 20h4"/></svg>
+        </span>
+        <p class="eyebrow eyebrow--on-dark" data-reveal="up">Dine-In, Effortless</p>
+        <h2 class="section__title section__title--on-dark" data-reveal="up">Scan. Order. Savour.</h2>
+        <p data-reveal="up">
+          Every table carries its own QR code. Scan it with your phone and the menu opens instantly &mdash;
           no app, no waiting for a card. Order at your own pace, add a note for the kitchen, and watch
           your meal move from <em>placed</em> to <em>ready</em> in real time.
         </p>
-        <div class="steps">
-          <div class="step"><span class="step__n">1</span><div><h4>Scan the code</h4><p>Your table's menu opens in the browser.</p></div></div>
-          <div class="step"><span class="step__n">2</span><div><h4>Build your order</h4><p>Add dishes, notes and sides at your pace.</p></div></div>
-          <div class="step"><span class="step__n">3</span><div><h4>Track it live</h4><p>Follow each plate from kitchen to table.</p></div></div>
+        <div class="steps" data-stagger="110">
+          <div class="step" data-reveal="up"><span class="step__n">1</span><div><h4>Scan the code</h4><p>Your table's menu opens in the browser.</p></div></div>
+          <div class="step" data-reveal="up"><span class="step__n">2</span><div><h4>Build your order</h4><p>Add dishes, notes and sides at your pace.</p></div></div>
+          <div class="step" data-reveal="up"><span class="step__n">3</span><div><h4>Track it live</h4><p>Follow each plate from kitchen to table.</p></div></div>
         </div>
       </div>
-      <div class="experience__art reveal" aria-hidden="true">
-        <div class="qr-card">
+
+      <div class="experience__art" data-reveal="scale">
+        <div class="qr-card" data-tilt>
           <div class="qr-card__top">
             <img src="assets/img/logo.png" alt="" class="qr-card__logo" />
             <span class="qr-card__tag">Table T-03</span>
@@ -226,10 +354,10 @@
             <!-- decorative QR motif -->
             <svg viewBox="0 0 100 100" width="160" height="160" role="img" aria-label="QR code illustration">
               <rect width="100" height="100" fill="#fff"/>
-              <g fill="#1a1a1a">
-                <rect x="6" y="6" width="22" height="22"/><rect x="11" y="11" width="12" height="12" fill="#fff"/><rect x="14" y="14" width="6" height="6" fill="#1a1a1a"/>
-                <rect x="72" y="6" width="22" height="22"/><rect x="77" y="11" width="12" height="12" fill="#fff"/><rect x="80" y="14" width="6" height="6" fill="#1a1a1a"/>
-                <rect x="6" y="72" width="22" height="22"/><rect x="11" y="77" width="12" height="12" fill="#fff"/><rect x="14" y="80" width="6" height="6" fill="#1a1a1a"/>
+              <g fill="#2A1A17">
+                <rect x="6" y="6" width="22" height="22"/><rect x="11" y="11" width="12" height="12" fill="#fff"/><rect x="14" y="14" width="6" height="6" fill="#2A1A17"/>
+                <rect x="72" y="6" width="22" height="22"/><rect x="77" y="11" width="12" height="12" fill="#fff"/><rect x="80" y="14" width="6" height="6" fill="#2A1A17"/>
+                <rect x="6" y="72" width="22" height="22"/><rect x="11" y="77" width="12" height="12" fill="#fff"/><rect x="14" y="80" width="6" height="6" fill="#2A1A17"/>
                 <rect x="36" y="8" width="6" height="6"/><rect x="48" y="8" width="6" height="6"/><rect x="60" y="8" width="6" height="6"/>
                 <rect x="8" y="36" width="6" height="6"/><rect x="20" y="36" width="6" height="6"/><rect x="36" y="36" width="6" height="6"/><rect x="48" y="36" width="6" height="6"/><rect x="66" y="36" width="6" height="6"/><rect x="80" y="36" width="6" height="6"/>
                 <rect x="14" y="48" width="6" height="6"/><rect x="30" y="48" width="6" height="6"/><rect x="42" y="48" width="6" height="6"/><rect x="60" y="48" width="6" height="6"/><rect x="74" y="48" width="6" height="6"/><rect x="88" y="48" width="6" height="6"/>
@@ -238,6 +366,7 @@
                 <rect x="42" y="84" width="6" height="6"/><rect x="54" y="84" width="6" height="6"/><rect x="66" y="84" width="6" height="6"/>
               </g>
             </svg>
+            <span class="qr-card__scan" aria-hidden="true"></span>
           </div>
           <p class="qr-card__hint">Scan to open the menu</p>
         </div>
@@ -245,19 +374,156 @@
     </div>
   </section>
 
+  <!-- wave: dark -> cream (gallery) -->
+  <div class="wave wave--dark-to-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,42 C160,78 320,10 500,32 C680,54 820,88 1000,66 C1180,44 1300,8 1440,38 L1440,90 L0,90 Z"/></svg>
+  </div>
+
   <!-- ===== Gallery ===== -->
   <section class="section gallery" id="gallery">
     <div class="container">
-      <div class="section__head reveal">
-        <p class="eyebrow">The Spread</p>
-        <h2 class="section__title">A feast for the senses</h2>
+      <div class="section__head" data-stagger="80">
+        <span class="badge-icon badge-icon--center" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.5-4.5 3.5 3.5 3-2.5L20 17"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">The Spread</p>
+        <h2 class="section__title" data-reveal="up">A feast for the senses</h2>
+        <p class="section__sub" data-reveal="up">Tap any photo to view it full size.</p>
       </div>
-      <div class="gallery__grid reveal">
-        <figure class="g g--tall"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&q=70" alt="Mandi family platter" loading="lazy" /></figure>
-        <figure class="g"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=700&q=70" alt="Chicken dum biryani" loading="lazy" /></figure>
-        <figure class="g"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=700&q=70" alt="Chicken 65" loading="lazy" /></figure>
-        <figure class="g g--wide"><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=900&q=70" alt="Mutton mandi" loading="lazy" /></figure>
-        <figure class="g"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=700&q=70" alt="Mutton biryani" loading="lazy" /></figure>
+      <div class="gallery__grid" id="galleryGrid" data-stagger="90">
+        <figure class="g g--tall" data-reveal="scale"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=1600&amp;q=80" alt="Mandi family platter" loading="lazy" /><figcaption>Family platter</figcaption></figure>
+        <figure class="g" data-reveal="scale"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1600&amp;q=80" alt="Chicken dum biryani" loading="lazy" /><figcaption>Chicken dum biryani</figcaption></figure>
+        <figure class="g" data-reveal="scale"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=1600&amp;q=80" alt="Chicken 65" loading="lazy" /><figcaption>Chicken 65</figcaption></figure>
+        <figure class="g" data-reveal="scale"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=1600&amp;q=80" alt="Arabian grilled chicken" loading="lazy" /><figcaption>Arabian grill</figcaption></figure>
+        <figure class="g g--wide" data-reveal="scale"><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=1600&amp;q=80" alt="Mutton mandi" loading="lazy" /><figcaption>Mutton mandi</figcaption></figure>
+        <figure class="g" data-reveal="scale"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&amp;q=70" data-full="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=1600&amp;q=80" alt="Mutton biryani" loading="lazy" /><figcaption>Mutton biryani</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials =====
+       PLACEHOLDER CONTENT — replace with real, attributable guest reviews before going live. -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section__head" data-stagger="80">
+        <span class="badge-icon badge-icon--center" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 7H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/><path d="M19 7h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">Guest Book</p>
+        <h2 class="section__title" data-reveal="up">Kind words from our table</h2>
+      </div>
+
+      <div class="quotes" data-reveal="up">
+        <button class="quotes__nav quotes__nav--prev" id="qPrev" aria-label="Previous review">&#8592;</button>
+        <div class="quotes__viewport">
+          <div class="quotes__track" id="quotesTrack">
+            <blockquote class="quote">
+              <p>The mandi rice actually tastes of smoke &mdash; you can tell it has been sitting over the coals for hours. Portion sizes are unreal for the price.</p>
+              <footer><span class="quote__name">Rahul S.</span><span class="quote__meta">Dined in &middot; Chromepet</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>We ordered the family platter for four and still had food left over. The mutton fell off the bone. Sulaimani tea afterwards was the perfect close.</p>
+              <footer><span class="quote__name">Fathima N.</span><span class="quote__meta">Dined in &middot; Pallavaram</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Scanned the QR at the table and the whole menu opened on my phone. Ordered without waiting for anyone. Small thing, but it made the evening easy.</p>
+              <footer><span class="quote__name">Arun K.</span><span class="quote__meta">Dined in &middot; Tambaram</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Been looking for proper Yemeni mandi in Chennai for years. This is the closest to what I ate in Sana'a. The kubboos and hummus are worth ordering too.</p>
+              <footer><span class="quote__name">Imran A.</span><span class="quote__meta">Dined in &middot; Guindy</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Staff were genuinely warm, not just polite. They checked whether the spice level worked for my kids and adjusted it. We'll be back.</p>
+              <footer><span class="quote__name">Divya R.</span><span class="quote__meta">Dined in &middot; Chromepet</span></footer>
+            </blockquote>
+          </div>
+        </div>
+        <button class="quotes__nav quotes__nav--next" id="qNext" aria-label="Next review">&#8594;</button>
+        <div class="quotes__dots" id="quotesDots" role="tablist" aria-label="Choose a review"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: cream -> sand (reserve) -->
+  <div class="wave wave--cream-to-sand wave--flip" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,58 C180,18 340,86 520,62 C700,38 830,4 1010,26 C1190,48 1300,80 1440,52 L1440,90 L0,90 Z"/></svg>
+  </div>
+
+  <!-- ===== Reserve ===== -->
+  <section class="section reserve" id="reserve">
+    <div class="container reserve__grid">
+      <div class="reserve__copy" data-stagger="80">
+        <span class="badge-icon" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M8 15h4"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">Book a Table</p>
+        <h2 class="section__title" data-reveal="up">Reserve your seat<br />at the mandi</h2>
+        <p data-reveal="up">
+          Tell us when you're coming and how many are joining. We'll confirm your table over
+          WhatsApp within a few minutes during opening hours.
+        </p>
+        <ul class="about__points" data-stagger="90">
+          <li data-reveal="up"><span class="tick"></span> Groups of 8 or more &mdash; please call ahead</li>
+          <li data-reveal="up"><span class="tick"></span> Tables held for 15 minutes past the booking time</li>
+          <li data-reveal="up"><span class="tick"></span> Family seating available on request</li>
+        </ul>
+        <p class="reserve__call" data-reveal="up">
+          Prefer to speak to us? <a href="tel:+919876543210" class="link-arrow">Call +91 98765 43210 <span aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+
+      <div class="reserve__panel" data-reveal="right">
+        <form class="rform" id="reserveForm" novalidate>
+          <div class="rform__row">
+            <div class="field">
+              <label for="rName">Name</label>
+              <input type="text" id="rName" name="name" required autocomplete="name" placeholder="Your name" />
+              <span class="field__error" data-error-for="rName"></span>
+            </div>
+            <div class="field">
+              <label for="rPhone">Phone</label>
+              <input type="tel" id="rPhone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="10-digit mobile" />
+              <span class="field__error" data-error-for="rPhone"></span>
+            </div>
+          </div>
+
+          <div class="rform__row">
+            <div class="field">
+              <label for="rDate">Date</label>
+              <input type="date" id="rDate" name="date" required />
+              <span class="field__error" data-error-for="rDate"></span>
+            </div>
+            <div class="field">
+              <label for="rTime">Time</label>
+              <input type="time" id="rTime" name="time" required min="11:00" max="23:30" step="900" />
+              <span class="field__error" data-error-for="rTime"></span>
+            </div>
+            <div class="field field--sm">
+              <label for="rGuests">Guests</label>
+              <input type="number" id="rGuests" name="guests" required min="1" max="30" value="2" inputmode="numeric" />
+              <span class="field__error" data-error-for="rGuests"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="rNotes">Anything we should know? <span class="field__opt">optional</span></label>
+            <textarea id="rNotes" name="notes" rows="3" maxlength="300" placeholder="Birthday, high chair, seating preference&hellip;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--solid btn--lg btn--shine rform__submit">Request Reservation</button>
+          <p class="rform__fine">We'll open WhatsApp with your request pre-filled &mdash; you just press send.</p>
+        </form>
+
+        <div class="rform__done" id="reserveDone" hidden>
+          <div class="rform__check" aria-hidden="true"></div>
+          <h3>Request ready</h3>
+          <p id="reserveDoneMsg">We've opened WhatsApp with your reservation details. Send the message and we'll confirm shortly.</p>
+          <div class="rform__done-actions">
+            <a href="tel:+919876543210" class="btn btn--ghost btn--sm">Call instead</a>
+            <button type="button" class="btn btn--ghost btn--sm" id="reserveAgain">Make another request</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -265,26 +531,29 @@
   <!-- ===== Visit / Location ===== -->
   <section class="section visit" id="visit">
     <div class="container visit__grid">
-      <div class="visit__info reveal">
-        <p class="eyebrow">Visit Us</p>
-        <h2 class="section__title">We've saved you a seat</h2>
+      <div class="visit__info" data-stagger="80">
+        <span class="badge-icon" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">Visit Us</p>
+        <h2 class="section__title" data-reveal="up">We've saved you a seat</h2>
 
-        <div class="info-block">
+        <div class="info-block" data-reveal="up">
           <h4 class="info-block__label">Address</h4>
           <p class="info-block__text">
             1, Tiruneermalai Main Road,<br />
             Subbaraya Nagar, Chromepet,<br />
             Chennai, Tamil Nadu 600044
           </p>
-          <a class="link-arrow" href="https://www.google.com/maps/dir/?api=1&destination=1%2C+Tiruneermalai+Main+Rd%2C+Subbaraya+Nagar%2C+Chromepet%2C+Chennai%2C+Tamil+Nadu+600044" target="_blank" rel="noopener">
-            Get directions <span aria-hidden="true">→</span>
+          <a class="link-arrow" href="https://www.google.com/maps/dir/?api=1&amp;destination=1%2C+Tiruneermalai+Main+Rd%2C+Subbaraya+Nagar%2C+Chromepet%2C+Chennai%2C+Tamil+Nadu+600044" target="_blank" rel="noopener">
+            Get directions <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
 
-        <div class="info-row">
+        <div class="info-row" data-reveal="up">
           <div class="info-block">
             <h4 class="info-block__label">Hours</h4>
-            <p class="info-block__text">Open all week<br />11:00 AM — 11:30 PM</p>
+            <p class="info-block__text">Open all week<br />11:00 AM &mdash; 11:30 PM</p>
           </div>
           <div class="info-block">
             <h4 class="info-block__label">Reservations</h4>
@@ -295,17 +564,17 @@
           </div>
         </div>
 
-        <div class="visit__socials">
+        <div class="visit__socials" data-reveal="up">
           <a href="#" aria-label="Instagram" class="soc">Instagram</a>
           <a href="#" aria-label="Facebook" class="soc">Facebook</a>
           <a href="#" aria-label="WhatsApp" class="soc">WhatsApp</a>
         </div>
       </div>
 
-      <div class="visit__map reveal">
+      <div class="visit__map" data-reveal="right">
         <iframe
           title="BISMI MANDI location map"
-          src="https://maps.google.com/maps?q=1%2C%20Tiruneermalai%20Main%20Rd%2C%20Subbaraya%20Nagar%2C%20Chromepet%2C%20Chennai%2C%20Tamil%20Nadu%20600044&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=1%2C%20Tiruneermalai%20Main%20Rd%2C%20Subbaraya%20Nagar%2C%20Chromepet%2C%20Chennai%2C%20Tamil%20Nadu%20600044&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -313,14 +582,64 @@
     </div>
   </section>
 
-  <!-- ===== CTA banner ===== -->
-  <section class="cta">
-    <div class="container cta__inner reveal">
-      <h2 class="cta__title">Come hungry. Leave cared for.</h2>
-      <p class="cta__sub">Gather your people and pull up a chair — the mandi is waiting.</p>
-      <a href="tel:+919876543210" class="btn btn--solid btn--lg">Call to Reserve</a>
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="container faq__wrap">
+      <div class="section__head" data-stagger="80">
+        <span class="badge-icon badge-icon--center" data-reveal="scale" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.4 9.2a2.7 2.7 0 1 1 3.4 3c-.6.2-1 .8-1 1.5v.4"/><path d="M12 17.2h.01"/></svg>
+        </span>
+        <p class="eyebrow" data-reveal="up">Good to Know</p>
+        <h2 class="section__title" data-reveal="up">Before you visit</h2>
+      </div>
+
+      <div class="acc" id="acc" data-stagger="70">
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">Do you take reservations?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>Yes. Use the reservation form above and we'll confirm over WhatsApp, or call us directly. For groups of eight or more, a phone call is best so we can arrange seating.</p></div></div>
+        </div>
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">Is the food halal?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>All our meat is halal sourced and prepared fresh daily. Our kitchen team can talk you through any dish if you have questions.</p></div></div>
+        </div>
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">Are there vegetarian options?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>Yes &mdash; veg mandi, vegetable dum biryani, paneer tikka, gobi 65, hummus and a range of breads and sides. Use the <em>Veg</em> filter in the menu above to see them all.</p></div></div>
+        </div>
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">How does the QR ordering work?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>Each table has its own code. Scan it with your phone camera and the menu opens in the browser &mdash; no app to install. Add dishes, leave a note for the kitchen, and follow your order as it's prepared.</p></div></div>
+        </div>
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">Do you offer takeaway or delivery?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>Takeaway is available for the full menu &mdash; call ahead and we'll have it packed and ready. For delivery, please get in touch on WhatsApp to check availability in your area.</p></div></div>
+        </div>
+        <div class="acc__item" data-reveal="up">
+          <h3><button type="button" class="acc__q" aria-expanded="false">Is parking available?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc__a"><div class="acc__a-inner"><p>There is on-street parking along Tiruneermalai Main Road. Evenings and weekends get busy, so allow a few extra minutes.</p></div></div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- wave: cream -> dark (cta) -->
+  <div class="wave wave--sand-to-dark wave--flip wave--tall" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,74 C150,22 300,6 470,34 C640,62 760,116 930,96 C1100,76 1270,20 1440,50 L1440,120 L0,120 Z"/></svg>
+  </div>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta">
+    <div class="container cta__inner" data-stagger="80">
+      <h2 class="cta__title" data-reveal="mask">Come hungry.<br />Leave cared for.</h2>
+      <p class="cta__sub" data-reveal="up">Gather your people and pull up a chair &mdash; the mandi is waiting.</p>
+      <div class="cta__actions" data-reveal="up">
+        <a href="#reserve" class="btn btn--amber btn--lg btn--shine">Reserve a Table</a>
+        <a href="tel:+919876543210" class="btn btn--ghost-light btn--lg">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
@@ -332,24 +651,40 @@
           <div class="footer__tag">Asli Yemeni Mandi</div>
         </div>
       </div>
-      <nav class="footer__nav">
+      <nav class="footer__nav" aria-label="Footer">
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#experience">Experience</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reserve">Reserve</a>
         <a href="#visit">Visit</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="footer__contact">
         <p>1, Tiruneermalai Main Rd, Subbaraya Nagar,<br />Chromepet, Chennai, Tamil Nadu 600044</p>
-        <p><a href="tel:+919876543210">+91 98765 43210</a> · <a href="mailto:hello@bismimandi.in">hello@bismimandi.in</a></p>
+        <p><a href="tel:+919876543210">+91 98765 43210</a> &middot; <a href="mailto:hello@bismimandi.in">hello@bismimandi.in</a></p>
       </div>
     </div>
     <div class="footer__bar">
-      <span>© <span id="year"></span> BISMI MANDI · All rights reserved.</span>
-      <span class="footer__fine">Crafted with hospitality.</span>
+      <span>&copy; <span id="year"></span> BISMI MANDI &middot; All rights reserved.</span>
+      <span class="footer__fine">Designed by <span class="footer__by">TheVincis</span></span>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden><span aria-hidden="true">&uarr;</span></button>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb__close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Previous photo">&#8592;</button>
+    <figure class="lb__stage">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb__nav lb__nav--next" id="lbNext" aria-label="Next photo">&#8594;</button>
+  </div>
+
+  <script src="assets/js/main.js?v=8"></script>
 </body>
 </html>
