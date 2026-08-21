@@ -640,10 +640,28 @@ button { font: inherit; color: inherit; }
 .field label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-500); }
 .field__opt { font-weight: 500; letter-spacing: 0.04em; text-transform: none; color: var(--ink-400); }
 .field input, .field textarea {
-  font-family: var(--font-sans); font-size: 15px; color: var(--ink-900);
+  font-family: var(--font-sans); font-size: 16px; color: var(--ink-900);
   background: var(--cream-2); border: 1.5px solid var(--line); border-radius: 12px;
-  padding: 12px 14px; width: 100%; transition: border-color .2s var(--ease), background .2s var(--ease);
+  padding: 12px 14px; width: 100%; line-height: 1.4;
+  /* grid items default to min-width:auto, so an input with a wide intrinsic
+     size (date/time on iOS) would blow past its column. */
+  min-width: 0; max-width: 100%;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
 }
+/* iOS Safari sizes date/time inputs to their own content and centres the text,
+   which made them overflow the panel and sit wider than every other field.
+   Stripping the native appearance puts them back on the shared box model. */
+.field input[type="date"],
+.field input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: left;
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator,
+.field input[type="time"]::-webkit-calendar-picker-indicator { margin: 0; opacity: .55; cursor: pointer; }
+/* One line of text + padding + borders. Pinned rather than left to intrinsic
+   sizing, because date/time controls come out ~2px taller on their own. */
+.field input { height: calc(1.4em + 27px); min-height: 0; }
 .field textarea { resize: vertical; line-height: 1.6; }
 .field input::placeholder, .field textarea::placeholder { color: var(--ink-400); }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--red-500); background: #fff; }
